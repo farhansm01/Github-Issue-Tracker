@@ -13,7 +13,7 @@
       src="https://kit.fontawesome.com/d8e34e8eec.js"
       crossorigin="anonymous"
     ></script>
-
+    <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
   </head>
   <body class="bg-[#F8FAFC]">
@@ -92,6 +92,7 @@
         class="max-w-[1600px] mx-auto bg-white mt-15 mb-4 p-6 rounded-lg shadow"
       >
         <button
+          onclick="loadAllIssues()"
           class="btn w-18 sm:w-23 border-gray-400 text-gray-500 bg-transparent hover:bg-[#4A00FF] hover:text-white"
         >
           All
@@ -109,9 +110,9 @@
       </div>
 
       <!-- Issue List -->
-      <div class="max-w-[1600px] mx-auto rounded-lg shadow">
+      <div class="max-w-[1600px] mx-auto rounded-lg shadow rounded-t-xl">
         <div
-          class="bg-white border-b-2 p-6 border-gray-200 flex items-center justify-between"
+          class="bg-white border-b-2 p-6 border-gray-200 flex items-center justify-between rounded-t-xl"
         >
           <div class="flex items-center gap-2">
             <img src="./assets/Aperture.png" alt="" />
@@ -133,41 +134,10 @@
           </div>
         </div>
         <!-- Card Container -->
-        <div class="grid grid-cols-4">
-          <div class="card bg-white shadow-md rounded-md">
-            <div class="border-b border-gray-300 p-6 space-y-3">
-              <div class="flex justify-between items-center">
-                <img class="w-6 h-6" src="./assets/Open-Status.png" alt="" />
-                <span
-                  class="px-6 py-1 text-[#EF4444] font-semibold bg-[#FEECEC] rounded-full"
-                  >HIGH</span
-                >
-              </div>
-              <h3 class="font-semibold text-xl">
-                Fix navigation menu on mobile devices
-              </h3>
-              <p class="text-[#64748B] mb-6">
-                The navigation menu doesn't collapse properly on mobile
-                devices...
-              </p>
-              <div>
-                <span
-                  class="px-6 py-2 text-[#EF4444] font-semibold bg-[#FEECEC] rounded-full"
-                  ><i class="fa-solid fa-bug"></i> BUG</span
-                >
-                <span
-                  class="px-6 py-2 text-[#D97706] font-semibold bg-[#FFF8DB] rounded-full"
-                  ><i class="fa-solid fa-life-ring"></i> HELP WANTED</span
-                >
-              </div>
-            </div>
-            <div class="p-6 space-y-2 text-[#64748B]">
-              <p>#1 by john_doe</p>
-              <p>1/15/2024</p>
-            </div>
-          </div>
-        </div>
+        <div id="issues-container" class="grid grid-cols-4 gap-3 p-6"></div>
       </div>
     </main>
+
+    <script src="./index.js"></script>
   </body>
 </html>
