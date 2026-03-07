@@ -3,9 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script
+      src="https://kit.fontawesome.com/d8e34e8eec.js"
+      crossorigin="anonymous"
+    ></script>
+
     <title>Document</title>
   </head>
-  <body>
-    <h1>Hello World</h1>
+  <body class="bg-[#F8FAFC]">
+    <section class="flex justify-center items-center min-h-screen">
+      <div
+        class="w-full max-w-[520px] text-center bg-white p-8 rounded-lg shadow-lg space-y-6"
+      >
+        <div>
+          <img class="mx-auto mb-6" src="./assets/github-logo.png" alt="" />
+          <h3 class="text-2xl font-semibold">GitHub Issues Tracker</h3>
+          <p class="text-[#64748B]">Sign in to manage your issues</p>
+        </div>
+        <div class="flex flex-col text-left">
+          <label class="font-semibold mb-2" for="username">Username</label>
+          <input
+            class="p-3 rounded-lg border-2 border-gray-200 mb-4"
+            type="text"
+            placeholder="Enter Username"
+          />
+
+          <label class="font-semibold mb-2" for="password">Password</label>
+          <input
+            class="p-3 rounded-lg border-2 border-gray-200 mb-4"
+            type="password"
+            placeholder="Enter Password"
+          />
+
+          <button type="button" class="btn btn-primary">Sign In</button>
+        </div>
+        <p>---------------------OR-----------------------</p>
+        <div>
+          <p class="text-[#64748B] mb-2">Demo Credentials</p>
+          <div class="bg-[#F8FAFC] p-4 rounded-lg">
+            <p><span class="font-semibold">Username:</span> admin</p>
+            <p><span class="font-semibold">Password:</span> admin123</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
