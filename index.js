@@ -1,3 +1,8 @@
+const countTotalIssues = (arr) => {
+    const totalIssues = arr.length;
+    document.getElementById("totalIssues").innerText = `${totalIssues} Issues`;
+}
+
 const removeActive = () => {
     const tabs = document.querySelectorAll(".tab");
     tabs.forEach(tab => {
@@ -24,6 +29,7 @@ const loadAllIssues = () => {
     .then((res) => res.json())
     .then((data) => {
         displayIssues(data.data);
+        countTotalIssues(data.data);
     })
 }
 
@@ -37,6 +43,7 @@ const loadOpenIssues = () => {
         const allIssues = data.data;
         const openIssues = allIssues.filter(issue => issue.status === "open");
         displayIssues(openIssues);
+        countTotalIssues(openIssues);
     })
 }
 
@@ -51,6 +58,7 @@ const loadClosedIssues = () => {
         const closedIssues = allIssues.filter(issue => issue.status === "closed");
         console.log(closedIssues);
         displayIssues(closedIssues);
+        countTotalIssues(closedIssues);
     })
 }
 
