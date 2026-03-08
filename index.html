@@ -55,6 +55,7 @@
       </div>
     </section>
 
+    <!-- navbar -->
     <header class="bg-white shadow">
       <nav
         class="max-w-11/12 mx-auto flex flex-col md:flex-row gap-7 justify-between items-center p-3"
@@ -88,22 +89,28 @@
     </header>
 
     <main class="">
+      <!-- Tab section -->
       <div
         class="max-w-[1600px] mx-auto bg-white mt-15 mb-4 p-6 rounded-lg shadow"
       >
         <button
           onclick="loadAllIssues()"
-          class="btn w-18 sm:w-23 border-gray-400 text-gray-500 bg-transparent hover:bg-[#4A00FF] hover:text-white"
+          id="allTab"
+          class="btn w-18 sm:w-23 border-gray-400 text-gray-500 bg-transparent hover:bg-[#4A00FF] hover:text-white tab active"
         >
           All
         </button>
         <button
-          class="btn w-18 sm:w-23 border-gray-400 text-gray-500 bg-transparent hover:bg-[#4A00FF] hover:text-white"
+          onclick="loadOpenIssues()"
+          id="openTab"
+          class="btn w-18 sm:w-23 border-gray-400 text-gray-500 bg-transparent hover:bg-[#4A00FF] hover:text-white tab"
         >
           Open
         </button>
         <button
-          class="btn w-18 sm:w-23 border-gray-400 text-gray-500 bg-transparent hover:bg-[#4A00FF] hover:text-white"
+          onclick="loadClosedIssues()"
+          id="closedTab"
+          class="btn w-18 sm:w-23 border-gray-400 text-gray-500 bg-transparent hover:bg-[#4A00FF] hover:text-white tab"
         >
           Closed
         </button>
@@ -111,6 +118,7 @@
 
       <!-- Issue List -->
       <div class="max-w-[1600px] mx-auto rounded-lg shadow rounded-t-xl">
+        <!-- header of card container -->
         <div
           class="bg-white border-b-2 p-6 border-gray-200 flex items-center justify-between rounded-t-xl"
         >
@@ -132,6 +140,10 @@
               <span>Closed</span>
             </div>
           </div>
+        </div>
+        <!-- Loading Spinner -->
+        <div id="spinner" class="flex items-center justify-center py-20 hidden">
+          <span class="loading loading-infinity loading-xl"></span>
         </div>
         <!-- Card Container -->
         <div id="issues-container" class="grid grid-cols-4 gap-3 p-6"></div>

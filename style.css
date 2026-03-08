@@ -3,3 +3,8 @@
 * {
   font-family: "Geist", sans-serif;
 }
+
+.active {
+  background-color: #4a00ff;
+  color: white;
+}
