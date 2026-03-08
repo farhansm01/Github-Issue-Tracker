@@ -129,7 +129,7 @@
               <p class="text-[#64748B]">Track and manage your project issues</p>
             </div>
           </div>
-          <div class="flex items-center gap-6">
+          <div class="flex flex-col sm:flex-row items-center gap-6">
             <div class="flex items-center gap-2">
               <span class="w-4 h-4 bg-green-600 rounded-full"></span>
               <span>Open</span>
@@ -146,7 +146,10 @@
           <span class="loading loading-infinity loading-xl"></span>
         </div>
         <!-- Card Container -->
-        <div id="issues-container" class="grid grid-cols-4 gap-3 p-6"></div>
+        <div
+          id="issues-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 p-6"
+        ></div>
       </div>
     </main>
 
