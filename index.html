@@ -18,7 +18,10 @@
   </head>
   <body class="bg-[#F8FAFC]">
     <!-- login form -->
-    <section class="flex justify-center items-center min-h-screen hidden">
+    <section
+      id="loginSection"
+      class="flex justify-center items-center min-h-screen"
+    >
       <div
         class="w-full max-w-[520px] text-center bg-white p-8 rounded-lg shadow-lg space-y-6"
       >
@@ -30,6 +33,7 @@
         <div class="flex flex-col text-left">
           <label class="font-semibold mb-2" for="username">Username</label>
           <input
+            id="username"
             class="p-3 rounded-lg border-2 border-gray-200 mb-4"
             type="text"
             placeholder="Enter Username"
@@ -37,12 +41,15 @@
 
           <label class="font-semibold mb-2" for="password">Password</label>
           <input
+            id="password"
             class="p-3 rounded-lg border-2 border-gray-200 mb-4"
             type="password"
             placeholder="Enter Password"
           />
 
-          <button type="button" class="btn btn-primary">Sign In</button>
+          <button onclick="manageLogin()" type="button" class="btn btn-primary">
+            Sign In
+          </button>
         </div>
         <p>---------------------OR-----------------------</p>
         <div>
@@ -56,7 +63,7 @@
     </section>
 
     <!-- navbar -->
-    <header class="bg-white shadow">
+    <header id="header" class="bg-white shadow hidden">
       <nav
         class="max-w-11/12 mx-auto flex flex-col md:flex-row gap-7 justify-between items-center p-3"
       >
@@ -76,6 +83,7 @@
             ></i>
             <!--     -->
             <input
+              id="input-btn"
               type="text"
               placeholder="Search issues..."
               class="input pl-10 w-64"
@@ -83,12 +91,12 @@
           </div>
 
           <!-- Button -->
-          <button class="btn btn-primary">Search</button>
+          <button id="search-btn" class="btn btn-primary">Search</button>
         </div>
       </nav>
     </header>
 
-    <main class="">
+    <main id="main" class="hidden">
       <!-- Tab section -->
       <div
         class="max-w-[1600px] mx-auto bg-white mt-15 mb-4 p-6 rounded-lg shadow"

@@ -1,3 +1,25 @@
+
+// Login Form Functionality
+const manageLogin = () => {
+
+    const header = document.getElementById("header");
+    const main = document.getElementById("main");
+    const loginSection = document.getElementById("loginSection");
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if(username === "admin" && password === "admin123"){
+        loginSection.classList.add("hidden");
+        header.classList.remove("hidden");
+        main.classList.remove("hidden");
+    }else{
+        alert("Invalid username or password. Please try again.");
+    }
+}
+
+
+
 const countTotalIssues = (arr) => {
     const totalIssues = arr.length;
     document.getElementById("totalIssues").innerText = `${totalIssues} Issues`;
@@ -153,5 +175,21 @@ const addTags = (labels, id) => {
 }
 
 loadAllIssues();
+
+document.getElementById("search-btn").addEventListener("click", function(){
+    removeActive();
+    const searchVal = document.getElementById("input-btn").value.trim().toLowerCase();
+    
+    if(searchVal !== ""){
+        fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+    .then(res => res.json())
+    .then(data => {
+        const allIssues = data.data;
+        const filteredIssues = allIssues.filter(issue => issue.title.toLowerCase().includes(searchVal));
+        displayIssues(filteredIssues);
+        countTotalIssues(filteredIssues);
+    })
+    }
+})
 
 
