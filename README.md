@@ -1,7 +1,7 @@
-1️. What is the difference between var, let, and const?
-var is the old way to declare a variable and it can be redeclared and changed
-let is newer way and possible to change its value but not possible to declare it again in the same scope.
-const is used for values that should not change after assigning.
+1. What is the difference between var, let, and const?
+   var is the old way to declare a variable and it can be redeclared and changed
+   let is newer way and possible to change its value but not possible to declare it again in the same scope.
+   const is used for values that should not change after assigning.
 
 2. What is the spread operator (...)?
    Spread operator is used to spread or copy elements of an array or object. It is used for copying, merging, and passing data more efficiently without modifying original data.
