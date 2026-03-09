@@ -91,6 +91,12 @@ const displayIssues = (issues) => {
 
     issues.forEach(issue => {
         const issueCard = document.createElement("div");
+
+        // click event listener for modal display
+        issueCard.addEventListener("click", function(){
+            showIssueDetails(issue);
+        })
+
         const borderColor = issue.status === "open"
         ? ["border-t-3", "border-green-600"]
         : ["border-t-3", "border-purple-500"];
@@ -138,14 +144,72 @@ const displayIssues = (issues) => {
         `;
           
         issuesContainer.appendChild(issueCard);
-         addTags(issue.labels, issue.id);
+         addTags(issue.labels, `tags-${issue.id}`);
     });
         loadSpinner(false);
 }
 
 
+
+// Modal
+const showIssueDetails = (issue) => {
+
+
+    let priorityClss;
+    if(issue.priority === "high") {
+        priorityClss = "text-[#EF4444] bg-[#FEECEC]";
+    }else if(issue.priority === "medium") {
+        priorityClss = "text-[#D97706] bg-[#FFF8DB]";
+    }else{
+        priorityClss = "text-[#9CA3AF] bg-[#EEEFF2]";
+    }
+
+    const statusClss = issue.status === "open" ? "bg-[#00A96E]" : "bg-[#A855F7]";
+    const date = new Date(issue.createdAt);
+    const formattedDate = date.toLocaleDateString();
+
+    const modalDetails = document.getElementById("modalDetails");
+    modalDetails.innerHTML = `
+          <h2 class="text-2xl mb-2 font-bold">${issue.title}</h2>
+          <div class="flex gap-2 items-center mb-6">
+            <span
+              class="text-sm text-white ${statusClss} px-2 py-1.5 rounded-full"
+              >${issue.status}</span
+            >
+            <ul class="flex list-disc pl-5 gap-7 text-[#64748B]">
+              <li>Opened by ${issue.author}</li>
+              <li>${formattedDate}</li>
+            </ul>
+          </div>
+
+
+          <div
+            id="modalTags-${issue.id}"
+            class="flex items-center gap-2 flex-wrap mb-6"
+          >
+            
+          </div>
+          <p class="text-[#64748B] mb-6">
+            ${issue.description}
+          </p>
+          <div class="flex bg-[#F8FAFC] p-4 rounded-lg">
+            <div class="flex-1">
+              <p class="text-[#64748B]">Assignee:</p>
+              <p class="font-semibold">${issue.author}</p>
+            </div>
+            <div class="flex-1">
+              <p class="text-[#64748B] mb-3">Priority:</p>
+              <span class="font-semibold rounded-full px-3 py-1.5 ${priorityClss}">${issue.priority.toUpperCase()}</span>
+            </div>
+          </div>
+    `;
+        addTags(issue.labels, `modalTags-${issue.id}`);
+        document.getElementById("my_modal_1").showModal();
+}
+
+
 const addTags = (labels, id) => {
-    const tagsContainer = document.getElementById(`tags-${id}`);
+    const tagsContainer = document.getElementById(id);
     tagsContainer.innerHTML = "";
     labels.forEach(label => {
         const tag = document.createElement("span");
@@ -191,5 +255,6 @@ document.getElementById("search-btn").addEventListener("click", function(){
     })
     }
 })
+
 
 
