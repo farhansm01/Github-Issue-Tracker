@@ -1,19 +1,73 @@
-1. What is the difference between var, let, and const?
-   var is the old way to declare a variable and it can be redeclared and changed
-   let is newer way and possible to change its value but not possible to declare it again in the same scope.
-   const is used for values that should not change after assigning.
+# GitHub Issue Tracker
 
-2. What is the spread operator (...)?
-   Spread operator is used to spread or copy elements of an array or object. It is used for copying, merging, and passing data more efficiently without modifying original data.
+GitHub Issue Tracker is a dashboard-style web application that allows users to view, filter, and manage project issues. Users can log in, browse issues, filter by status, search issues, and view detailed information in a modal.
 
-3. What is the difference between map(), filter(), and forEach()?
-   map() goes through every element and returns a new array after changing the values.
-   filter() also returns a new array but only with elements that match a condition.
-   forEach() only runs code for each element and does not return a new array.
+## 🔗 Live Demo
+https://farhansm01.github.io/Github-Issue-Tracker/
 
-4. What is an arrow function?
-   Arrow function is a shorter and simpler way to write a function in JavaScript. It uses the => symbol and often makes the code cleaner.
+---
 
-5. What are template literals?
-   Template literals are a way to create strings in JavaScript using backticks `` instead of quotes.
-   using this insert of variables inside strings using ${} is possible. Also we can write multi-line strings easily
+## 🚀 Features
+
+- Login authentication (demo credentials)
+- Load issues from API
+- Filter by Open / Closed / All
+- Search issues
+- Issue details modal
+- Priority indicator
+- Status badges
+- Loading spinner
+- Responsive dashboard UI
+
+---
+
+## 🛠️ Tech Stack
+
+- HTML
+- Tailwind CSS
+- DaisyUI
+- JavaScript
+- REST API
+
+---
+
+## 📦 Dependencies
+
+- Tailwind CSS (CDN)
+- DaisyUI
+- Font Awesome
+- Issues API
+
+---
+
+## ⚙️ Run Locally
+
+Clone the project
+
+```bash
+git clone https://github.com/farhansm01/Github-Issue-Tracker.git
+```
+
+Go to project directory
+
+```bash
+cd Github-Issue-Tracker
+```
+
+Open in browser
+
+```bash
+open index.html
+```
+
+OR just double click `index.html`
+
+---
+
+## 🔗 Links
+
+GitHub Repo  
+https://github.com/farhansm01/Github-Issue-Tracker
+
+Live Site  
+https://farhansm01.github.io/Github-Issue-Tracker/
